@@ -33,7 +33,9 @@
 In the project directory, you can run:
 
 ```bash
-> ruby [file_name.rb]
+> ruby person.rb
+> ruby student.rb
+> ruby teacher.rb
 ```
 
 or alternatively you can copy and paste the commands in
