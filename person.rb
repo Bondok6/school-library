@@ -33,10 +33,10 @@ class Person < Nameable
   public :can_use_services?
 end
 
-# See my decorators in action
-person = Person.new(22, name: 'maximilianus')
-puts person.correct_name
-capitalizedPerson = CapitalizeDecorator.new(person)
-puts capitalizedPerson.correct_name
-capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-puts capitalizedTrimmedPerson.correct_name
+# See my decorators in action || For Testing
+# person = Person.new(22, name: 'maximilianus')
+# puts person.correct_name
+# capitalizedPerson = CapitalizeDecorator.new(person)
+# puts capitalizedPerson.correct_name
+# capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+# puts capitalizedTrimmedPerson.correct_name
