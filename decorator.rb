@@ -5,7 +5,6 @@ class Nameable
 end
 
 class BaseDecorator < Nameable
-
   attr_accessor :name
 
   def initialize(name)
@@ -25,8 +24,9 @@ class CapitalizeDecorator < BaseDecorator
 end
 
 class TrimmerDecorator < BaseDecorator
-  def correct_name 
-    return @name.correct_name[0..9] if(@name.correct_name.length > 10)
+  def correct_name
+    return @name.correct_name[0..9] if (@name.correct_name.length > 10)
+
     @name.correct_name
   end
 end
