@@ -25,7 +25,7 @@ end
 
 class TrimmerDecorator < BaseDecorator
   def correct_name
-    return @name.correct_name[0..9] if (@name.correct_name.length > 10)
+    return @name.correct_name[0..9] if @name.correct_name.length > 10
 
     @name.correct_name
   end
