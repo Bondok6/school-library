@@ -1,4 +1,6 @@
-class Person
+require_relative 'decorator'
+
+class Person < Nameable
   # getter & setter
   attr_accessor :name, :age
   # getter
@@ -6,9 +8,10 @@ class Person
 
   # initialization(constructor)
   def initialize(age, name: 'Unknown', parent_permission: true)
+    super()
     @id = Random.rand(1..1000)
-    @name = name
     @age = age
+    @name = name
     @parent_permission = parent_permission
   end
 
@@ -22,6 +25,18 @@ class Person
     is_of_age? || @parent_permission
   end
 
+  def correct_name
+    @name
+  end
+
   private :of_age?
   public :can_use_services?
 end
+
+# See my decorators in action || For Testing
+# person = Person.new(22, name: 'maximilianus')
+# puts person.correct_name
+# capitalizedPerson = CapitalizeDecorator.new(person)
+# puts capitalizedPerson.correct_name
+# capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+# puts capitalizedTrimmedPerson.correct_name
