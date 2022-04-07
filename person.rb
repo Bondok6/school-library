@@ -1,8 +1,9 @@
 require_relative 'decorator'
+require_relative 'rental'
 
 class Person < Nameable
   # getter & setter
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
   # getter
   attr_reader :id
 
@@ -13,6 +14,11 @@ class Person < Nameable
     @age = age
     @name = name
     @parent_permission = parent_permission
+    @rentals = []
+  end
+
+  def add_rental(date, book)
+    Rental.new(date, book, self)
   end
 
   # return true if @age >= 18
