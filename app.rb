@@ -13,7 +13,7 @@ end
 
 def create_person(people)
   print 'Do you want to create a student (1) or a teacher (2): '
-  choice = gets.chomp.to_i
+  choice = gets.chomp
   print 'Age: '
   age = gets.chomp.to_i
   print 'Name: '
