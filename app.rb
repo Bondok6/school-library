@@ -22,12 +22,8 @@ def create_person(people)
   when 1
     print 'Has parent permission? [Y/N]: '
     permission_input = gets.chomp
-    case permission_input
-    when 'Y'
-      permission = true
-    when 'N'
-      permission = false
-    end
+    permission = true if permission_input == 'Y'
+    permission = false if permission_input == 'N'
     people.push(Student.new(age, name: name, parent_permission: permission))
   when 2
     print 'Specialization: '
@@ -48,15 +44,13 @@ end
 
 def create_rental(books, people, rentals)
   puts 'Select a book from the following list by number'
-  books.each_with_index do |book, index|
-    puts "#{index}) Title: '#{book.title}', Author: #{book.author}"
-  end
+  books.each_with_index { |book, index| puts "#{index}) Title: '#{book.title}', Author: #{book.author}" }
   book_input = gets.chomp.to_i
 
   puts 'Select a person from the following list by number (Not ID): '
-  people.each_with_index do |person, index|
-    puts '#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}'
-  end
+  people.each_with_index { |person, index|
+    puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+  }
   person_input = gets.chomp.to_i
 
   print 'Date: '
