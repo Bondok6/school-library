@@ -48,7 +48,9 @@ def create_rental(books, people, rentals)
   book_input = gets.chomp.to_i
 
   puts 'Select a person from the following list by number (Not ID): '
-  people.each_with_index { |person, index| puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
+  people.each_with_index do |person, index|
+    puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+  end
   person_input = gets.chomp.to_i
 
   print 'Date: '
