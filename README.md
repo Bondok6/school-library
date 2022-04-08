@@ -9,6 +9,10 @@
 > - Save records of who borrowed a given book and when.
 >   And all of this will be built in a beautiful and well-organized way!
 
+
+https://user-images.githubusercontent.com/45231276/162344497-9a075b4b-0142-4860-8b7d-3019c51f8b72.mp4
+
+
 ## Built With
 
 - Ruby
