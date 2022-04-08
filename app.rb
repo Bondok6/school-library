@@ -12,7 +12,7 @@ def list_all_people(people)
 end
 
 def create_person(people)
-  print "Do you want to create a student (1) or a teacher (2): "
+  print 'Do you want to create a student (1) or a teacher (2): '
   choice = gets.chomp.to_i
   print 'Age: '
   age = gets.chomp.to_i
@@ -33,7 +33,7 @@ def create_person(people)
     specialization = gets.chomp
     people.push(Teacher.new(specialization, age, name))
   else
-    print "Wrong choice, Try Again!"
+    print 'Wrong choice, Try Again!'
     return
   end
   puts 'Person created successfully.'
@@ -49,7 +49,7 @@ def create_book(books)
 end
 
 def create_rental(books, people, rentals)
-  puts "Select a book from the following list by number"
+  puts 'Select a book from the following list by number'
   books.each_with_index do |book, index|
     puts "#{index}) Title: '#{book.title}', Author: #{book.author}"
   end
@@ -57,7 +57,7 @@ def create_rental(books, people, rentals)
 
   puts 'Select a person from the following list by number (Not ID): '
   people.each_with_index do |person, index|
-    puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    puts '#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}'
   end
   person_input = gets.chomp.to_i
 
@@ -72,7 +72,7 @@ def list_all_rentals_by_id(rentals)
   print 'ID of person: '
   person_id = gets.chomp.to_i
   rentals.each do |rental|
-    puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}." if rental.person.id == person_id
+    puts 'Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}.' if rental.person.id == person_id
   end
 end
 
