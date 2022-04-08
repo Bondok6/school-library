@@ -18,7 +18,8 @@ def create_person(people)
   age = gets.chomp.to_i
   print 'Name: '
   name = gets.chomp
-  if choice == 1
+  case choice
+  when 1
     print 'Has parent permission? [Y/N]: '
     permission_input = gets.chomp
     case permission_input
@@ -28,13 +29,10 @@ def create_person(people)
       permission = false
     end
     people.push(Student.new(age, name: name, parent_permission: permission))
-  elsif choice == 2
+  when 2
     print 'Specialization: '
     specialization = gets.chomp
     people.push(Teacher.new(specialization, age, name))
-  else
-    print 'Wrong choice, Try Again!'
-    return
   end
   puts 'Person created successfully.'
 end
