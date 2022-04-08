@@ -48,9 +48,7 @@ def create_rental(books, people, rentals)
   book_input = gets.chomp.to_i
 
   puts 'Select a person from the following list by number (Not ID): '
-  people.each_with_index { |person, index|
-    puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-  }
+  people.each_with_index { |person, index| puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
   person_input = gets.chomp.to_i
 
   print 'Date: '
@@ -64,7 +62,7 @@ def list_all_rentals_by_id(rentals)
   print 'ID of person: '
   person_id = gets.chomp.to_i
   rentals.each do |rental|
-    puts 'Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}.' if rental.person.id == person_id
+    puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}" if rental.person.id == person_id
   end
 end
 
