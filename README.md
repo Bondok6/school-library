@@ -33,15 +33,7 @@
 In the project directory, you can run:
 
 ```bash
-> ruby person.rb
-> ruby student.rb
-> ruby teacher.rb
-```
-
-or alternatively you can copy and paste the commands in
-
-```bash
-> irb
+> ruby main.rb
 ```
 
 ## Authors
