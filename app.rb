@@ -17,7 +17,9 @@ class App
   end
   
   def list_all_people()
-    people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
+    people.each_with_index do |person, index|
+      puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    end
   end
   
   def create_person()
@@ -57,9 +59,7 @@ class App
     book_input = gets.chomp.to_i
   
     puts 'Select a person from the following list by number (Not ID): '
-    people.each_with_index do |person, index|
-      puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
+    list_all_people
     person_input = gets.chomp.to_i
   
     print 'Date: '
