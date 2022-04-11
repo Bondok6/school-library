@@ -15,13 +15,13 @@ class App
   def list_all_books()
     books.each_with_index { |book, index| puts "#{index}) Title: '#{book.title}', Author: #{book.author}" }
   end
-  
+
   def list_all_people()
     people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
   end
-  
+
   def create_person()
     print 'Do you want to create a student (1) or a teacher (2): '
     choice = gets.chomp.to_i
@@ -43,7 +43,7 @@ class App
     end
     puts 'Person created successfully.'
   end
-  
+
   def create_book()
     print 'Title: '
     title = gets.chomp
@@ -52,23 +52,23 @@ class App
     books.push(Book.new(title, author))
     puts 'Book created successfully.'
   end
-  
+
   def create_rental()
     puts 'Select a book from the following list by number'
     list_all_books
     book_input = gets.chomp.to_i
-  
+
     puts 'Select a person from the following list by number (Not ID): '
     list_all_people
     person_input = gets.chomp.to_i
-  
+
     print 'Date: '
     date = gets.chomp
-  
+
     rentals.push(Rental.new(date, people[person_input], books[book_input]))
     puts 'Rental created successfully.'
   end
-  
+
   def list_all_rentals_by_id()
     print 'ID of person: '
     person_id = gets.chomp.to_i
@@ -76,7 +76,7 @@ class App
       puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}" if rental.person.id == person_id
     end
   end
-  
+
   def display_list
     puts 'Welcome to School library App!'
     puts "
@@ -89,24 +89,24 @@ class App
       6- List all rentals for a given person id
       7- Exit"
   end
-  
+
   def options()
     loop do
       display_list
       option = gets.chomp.to_i
       case option
       when 1
-        list_all_books()
+        list_all_books
       when 2
-        list_all_people()
+        list_all_people
       when 3
-        create_person()
+        create_person
       when 4
-        create_book()
+        create_book
       when 5
-        create_rental()
+        create_rental
       when 6
-        list_all_rentals_by_id()
+        list_all_rentals_by_id
       else
         break
       end
