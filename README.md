@@ -47,6 +47,10 @@ In the project directory, you can run:
 - GitHub: [@Bondok6](https://github.com/Bondok6)
 - LinkedIn: [Kyrillos](https://www.linkedin.com/in/kyrillos-hany/)
 
+👤 **Jeff Kayombo**
+
+- GitHub: [@Jeff](https://github.com/JEFFKAY16)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome and highly encouraged!
