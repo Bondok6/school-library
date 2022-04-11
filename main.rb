@@ -1,11 +1,10 @@
 require_relative 'app'
 
 def main
-  books = []
-  people = []
-  rentals = []
 
-  options(books, people, rentals)
+  app = App.new()
+  app.options()
+  
 end
 
 main
