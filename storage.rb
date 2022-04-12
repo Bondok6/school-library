@@ -23,3 +23,11 @@ def save_people(people)
   end
   File.write('person.json',JSON.generate(people_data))
 end
+
+def save_rentals(rentals)
+  rentals_data = []
+  rentals.each do |rental|
+    rentals_data.push({date: rental.date, person_id: rental.person.id, book_id: rental.book.id})
+  end
+  File.write('rentals.json',JSON.generate(rentals_data))
+end

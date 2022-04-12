@@ -56,6 +56,7 @@ class App
 
     rentals.push(Rental.new(date, people[person_input], books[book_input]))
     puts 'Rental created successfully.'
+    save_rentals(rentals)
   end
 
   def list_all_rentals_by_id
