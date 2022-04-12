@@ -21,7 +21,7 @@ def save_people(people)
       people_data.push({age: person.age, name: person.name, parent_permission: person.parent_permission})
     end
   end
-  File.write('person.json',JSON.generate(people_data))
+  File.write('person.json',JSON.generate(people_data), mode:"a")
 end
 
 def save_rentals(rentals)
@@ -29,5 +29,5 @@ def save_rentals(rentals)
   rentals.each do |rental|
     rentals_data.push({date: rental.date, person_id: rental.person.id, book_id: rental.book.id})
   end
-  File.write('rentals.json',JSON.generate(rentals_data))
+  File.write('rentals.json',JSON.generate(rentals_data), mode:"a")
 end
