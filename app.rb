@@ -3,6 +3,7 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
 require_relative 'require_inputs'
+require_relative 'storage'
 
 class App
   attr_accessor :books, :people, :rentals
@@ -40,6 +41,7 @@ class App
     title, author = grap_book_data
     books.push(Book.new(title, author))
     puts 'Book created successfully.'
+    save_books(books)
   end
 
   def create_rental
