@@ -35,6 +35,7 @@ class App
       people.push(Teacher.new(specialization, age, name))
     end
     puts 'Person created successfully.'
+    save_people(people)
   end
 
   def create_book
