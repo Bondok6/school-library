@@ -1,1 +1,4 @@
-[{ "date": "2/2/2005", "person_id": 911, "book_id": 41 }]
+[
+  { "date": "25/2/2002", "person_id": 62, "book_id": 817 },
+  { "date": "22/11/2012", "person_id": 131, "book_id": 817 }
+]

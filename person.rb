@@ -8,7 +8,7 @@ class Person < Nameable
   attr_reader :id
 
   # initialization(constructor)
-  def initialize(age, name: 'Unknown', parent_permission: true, id:nil)
+  def initialize(age, name: 'Unknown', parent_permission: true, id: nil)
     super()
     @id = id || Random.rand(1..1000)
     @age = age
@@ -18,7 +18,7 @@ class Person < Nameable
   end
 
   def add_rental(date, book)
-    Rental.new(date, book, self)
+    Rental.new(date, self, book)
   end
 
   # return true if @age >= 18
