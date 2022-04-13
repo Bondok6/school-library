@@ -3,14 +3,16 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
 require_relative 'require_inputs'
+require_relative 'storage'
+require_relative 'read_files'
 
 class App
   attr_accessor :books, :people, :rentals
 
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
+    @books = read_books
+    @people = read_people
+    @rentals = read_rentals(@books, @people)
   end
 
   def list_all_books
@@ -34,12 +36,14 @@ class App
       people.push(Teacher.new(specialization, age, name))
     end
     puts 'Person created successfully.'
+    save_people(people)
   end
 
   def create_book
     title, author = grap_book_data
     books.push(Book.new(title, author))
     puts 'Book created successfully.'
+    save_books(books)
   end
 
   def create_rental
@@ -53,6 +57,7 @@ class App
 
     rentals.push(Rental.new(date, people[person_input], books[book_input]))
     puts 'Rental created successfully.'
+    save_rentals(rentals)
   end
 
   def list_all_rentals_by_id
