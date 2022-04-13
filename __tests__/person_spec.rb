@@ -13,10 +13,10 @@ describe Person do
     end
     it "return true if age is greater or equal to 18" do
       person = Person.new(24)
-      expect(person.of_age?).to eql(true)
+      expect(person.of_age?).to be(true)
     end 
     it "return true if age is true or parent permission is true" do
       person = Person.new(24)
-      expect(person.can_use_services?).to eql(true)
+      expect(person.can_use_services?).to be(true)
     end
 end
