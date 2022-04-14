@@ -18,12 +18,12 @@ describe Person do
       expect(person.of_age?).to be(true)
     end
 
-    it 'return true if age is true or parent permission is true' do
+    it 'return true if the person can use services' do
       person = Person.new(24)
       expect(person.can_use_services?).to be(true)
     end
 
-    it 'return true if age is true or parent permission is true' do
+    it 'return a correct name' do
       person = Person.new(24, name: 'Jeff')
       expect(person.correct_name).to eql('Jeff')
     end
