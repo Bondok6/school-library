@@ -26,15 +26,12 @@ class Person < Nameable
     @age >= 18
   end
 
-  # return true if is_of_age or @parent_permission equal true.
+  # return true if of_age or @parent_permission equal true.
   def can_use_services?
-    is_of_age? || @parent_permission
+    of_age? || @parent_permission
   end
 
   def correct_name
     @name
   end
-
-  private :of_age?
-  public :can_use_services?
 end
