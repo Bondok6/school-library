@@ -17,6 +17,7 @@ https://user-images.githubusercontent.com/45231276/162344497-9a075b4b-0142-4860-
 
 - Ruby
 - OOP
+- Rspec
 
 ## Getting Started
 
@@ -38,6 +39,11 @@ In the project directory, you can run:
 
 ```bash
 > ruby main.rb
+```
+
+### To Run Test
+```bash
+> rspec __tests__
 ```
 
 ## Authors
